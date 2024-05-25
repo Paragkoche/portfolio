@@ -1,0 +1,33 @@
+@use "@/scss/variables" as *;
+
+.nav-bar {
+    position: fixed;
+
+    height: rem(90);
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: rem(1) solid $border;
+
+    header {
+        margin-left: rem(90);
+        width: calc(100vw - rem(90));
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .right {
+            display: flex;
+            align-items: center;
+            grid-column-gap: 2rem;
+        }
+    }
+}
+
+.splitter {
+    color: $txt-fade;
+}
