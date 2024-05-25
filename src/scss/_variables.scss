@@ -1,0 +1,58 @@
+@use "sass:math";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$roboto: "Roboto", sans-serif;
+
+$dark: #232121;
+$light: #f5f3f0;
+
+//*------> pixel to rem
+
+@function rem($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16)+rem;
+    }
+
+    @else {
+        @error "There is a unit present in the value";
+    }
+}
+
+//*------> pixel to em
+
+@function em($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16)+em;
+    }
+
+    @else {
+        @error "There is a unit present in the value";
+    }
+}
+
+//*------> responsive
+
+$breakpoint-up: (
+    "tablet": em(800),
+    "laptop": em(1024),
+    "large": em(2040),
+);
+
+@mixin breakpoint($size) {
+    @media screen and (min-width: map-get($breakpoint-up, $size)) {
+        @content;
+    }
+}
+
+//*------> width and pading
+
+@mixin full-width {
+    width: 100vw;
+    max-width: 100%;
+    padding: 0 2vw;
+
+    @include breakpoint(tablet) {
+        padding: 0 10vw;
+    }
+}
