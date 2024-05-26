@@ -2,15 +2,24 @@
 
 .btn {
     padding: 1rem 2rem;
+
+    &.emt {
+        padding: 1rem;
+    }
+
     color: $white-80;
     background: $secondary-black-900;
-    border-radius: 20rem;
-    transition: color .4s, background-color .4s;
+    border-radius: 200rem;
+    transition: color .4s,
+    background-color .4s;
     position: relative;
     overflow: hidden;
     outline: none;
     border: none;
     z-index: 10;
+
+
+
 
     .ripple {
         position: absolute;
@@ -21,8 +30,21 @@
         z-index: 0;
     }
 
+    font-size: 1.6rem;
+
     .btn-child {
         position: relative;
         z-index: 500;
+        display: flex;
+        align-items: center;
+        line-height: 1.3em;
+        flex-direction: row;
+        gap: .8rem;
+
+        .btn-icon {
+            transform: rotate(135deg);
+            height: rem(24);
+            width: rem(24);
+        }
     }
 }
