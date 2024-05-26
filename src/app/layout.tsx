@@ -1,5 +1,6 @@
+import Cursor from "@/components/ui/cursor";
 import type { Metadata } from "next";
-
+import "@/scss/globals.scss";
 export const metadata: Metadata = {
   title: "Parag Koche | Full Stack Web Developer",
   description:
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Cursor />
+      </body>
     </html>
   );
 }

@@ -1,0 +1,28 @@
+@use "@/scss/variables" as *;
+
+.btn {
+    padding: 1rem 2rem;
+    color: $white-80;
+    background: $secondary-black-900;
+    border-radius: 20rem;
+    transition: color .4s, background-color .4s;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    z-index: 10;
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: $purple;
+        transform: scale(0);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .btn-child {
+        position: relative;
+        z-index: 500;
+    }
+}
