@@ -1,9 +1,0 @@
-@use "@/scss/variables" as *;
-
-.sidebar {
-    margin-top: rem(90);
-    position: fixed;
-    width: rem(90);
-    border-right: rem(1) solid $border;
-    height: calc(100vh - rem(90));
-}
