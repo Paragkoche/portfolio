@@ -1,5 +1,5 @@
 import GsapMagnetic from "@/hook/MagneticEffect";
-import "@/scss/ui/Button.style.scss";
+import "@/scss/ui/button.style.scss";
 import { IoArrowBack } from "react-icons/io5";
 import React from "react";
 const Button = (props: React.HTMLAttributes<HTMLButtonElement>) => {
