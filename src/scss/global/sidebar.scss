@@ -5,6 +5,10 @@
     width: rem(88);
     height: calc(100vh - rem(88));
     border-right: 1px solid $border ;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .ss {

@@ -30,11 +30,11 @@ const Timer = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      key={format(time, "HH:mm:aaa")}
+      key={format(time, "hh:mm:aaa")}
       onMouseEnter={() => setHovered(true, text())}
       onMouseLeave={() => setHovered(false, "")}
     >
-      {format(time, "HH", { locale: enIN })} :{" "}
+      {format(time, "hh", { locale: enIN })} :{" "}
       {format(time, "mm", { locale: enIN })} :{" "}
       {format(time, "aaa", { locale: enIN }).toUpperCase()} / India
     </motion.p>

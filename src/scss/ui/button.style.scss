@@ -3,6 +3,11 @@
 .btn {
     padding: 1rem 2rem;
 
+    @include breakpoint(mobile) {
+        padding: .5rem 1rem;
+
+    }
+
     &.emt {
         padding: 1rem;
     }

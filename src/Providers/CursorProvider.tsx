@@ -53,6 +53,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
     y: useSpring(mouse.y, smoothOptions),
   };
   const manageMouseMove = (e: MouseEvent) => {
+    setTouchDevice("ontouchstart" in window);
     const { clientX, clientY } = e;
     // if (!stickyElement || !stickyElement.current) return;
     const { height, width } = { height: 24, width: 24 };
@@ -112,7 +113,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
       <motion.div
         transformTemplate={template}
         style={{
-          display: isTouchDevice ? "none" : "initial",
+          display: isTouchDevice ? "none !important" : "flex",
           left: smoothMouse.x,
           top: smoothMouse.y,
           scaleX: scale.x,
@@ -126,7 +127,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
         className="cursor"
         ref={cursor}
       >
-        {isHovered && <span className="cursor-inner-text">{text}</span>}
+        <span className="cursor-inner-text">{text}</span>
       </motion.div>
     </CursorContext.Provider>
   );

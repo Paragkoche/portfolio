@@ -12,6 +12,11 @@
         height: rem(88);
         border-right: 1px solid $border;
         border-bottom: 1px solid $border ;
+
+        @include breakpoint(mobile) {
+            height: rem(55);
+            width: rem(55);
+        }
     }
 
     &--nav {
@@ -23,10 +28,19 @@
         justify-content: space-between;
         width: calc(100vw - rem(88));
 
+        @include breakpoint(mobile) {
+            width: calc(100vw - rem(55));
+            padding: 0 1rem;
+        }
+
         h1 {
             font-size: 1.6rem;
             color: $secondary-black-900;
             font-weight: 300;
+
+            @include breakpoint(mobile) {
+                font-size: 1rem;
+            }
         }
 
         &--right {
@@ -37,4 +51,9 @@
         }
     }
 
+    @include breakpoint(mobile) {
+        height: rem(55);
+
+
+    }
 }

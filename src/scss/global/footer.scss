@@ -1,0 +1,118 @@
+@use "@/scss/variables" as *;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: rem(24);
+
+    .social {
+        display: flex;
+
+        // flex-wrap: wrap;
+        @include breakpoint(mobile) {
+            flex-wrap: wrap;
+
+            &>:nth-child(2) {
+                border-top-right-radius: 1rem;
+                // border-bottom-right-radius: 1rem;
+                border-right: 1px solid #9b9b9b;
+
+            }
+
+            :nth-child(3) {
+                border-bottom-left-radius: 1rem;
+                border-top: 0rem !important;
+            }
+
+            .first {
+                border-bottom-left-radius: 0rem !important;
+            }
+
+            .last {
+                border-right: 1px solid #9b9b9b;
+                border-top-right-radius: 0rem !important;
+                border-bottom-right-radius: 1rem;
+                border-top: 0rem !important;
+            }
+        }
+
+        .first {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+
+        .last {
+            border-right: 1px solid #9b9b9b;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        .social-box {
+            @include breakpoint(mobile) {
+                height: 10rem;
+                width: 50%;
+            }
+
+            height: 20rem;
+            aspect-ratio: 1;
+            border-top: 1px solid $border;
+            border-bottom: 1px solid $border;
+            border-left: 1px solid $border;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem;
+            transition: color .4s,
+            background-color .4s;
+            display: flex;
+
+            svg {
+                width: rem(24);
+                height: rem(24);
+            }
+        }
+    }
+
+    .extra-links {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        font-size: rem(16);
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: rem(24);
+
+            p {
+                transition: all .2s ease-in-out;
+                line-height: 1.3em;
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    left: 0;
+                    height: .1rem;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform .5s cubic-bezier(.59, .23, .22, .96);
+                }
+
+                &:hover {
+                    color: $purple;
+                    // text-decoration: underline;
+
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(mobile) {
+        gap: rem(16)
+    }
+}

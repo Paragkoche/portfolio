@@ -77,10 +77,11 @@ $breakpoint-up: (
     "tablet": em(800),
     "laptop": em(1024),
     "large": em(2040),
+    "mobile":em(430)
 );
 
 @mixin breakpoint($size) {
-    @media screen and (min-width: map-get($breakpoint-up, $size)) {
+    @media screen and (max-width: map-get($breakpoint-up, $size)) {
         @content;
     }
 }

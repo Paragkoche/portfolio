@@ -13,10 +13,13 @@
     overflow: hidden;
 
     .cursor-inner-text {
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex: none;
         font-size: 0.6em;
-        color: $body-bg
+        color: $body-bg;
+        transition: all .2s;
     }
 
 
