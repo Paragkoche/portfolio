@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@/scss/globals.scss";
 import { CursorProvider } from "@/Providers/CursorProvider";
+import Header from "@/components/global/header";
+import HomeLayout from "@/components/Home/homeBody";
 export const metadata: Metadata = {
   title: "Parag Koche | Full Stack Web Developer",
   description:
@@ -17,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CursorProvider>{children}</CursorProvider>
+        <CursorProvider>
+          <Header />
+          <HomeLayout>{children}</HomeLayout>
+        </CursorProvider>
       </body>
     </html>
   );

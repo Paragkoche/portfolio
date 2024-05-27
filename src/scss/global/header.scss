@@ -1,0 +1,40 @@
+@use "@/scss/variables" as *;
+
+.header {
+    height: rem(88);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+
+    .menu-button {
+        width: rem(88);
+        height: rem(88);
+        border-right: 1px solid $border;
+        border-bottom: 1px solid $border ;
+    }
+
+    &--nav {
+        height: 100%;
+        border-bottom: 1px solid $border ;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100vw - rem(88));
+
+        h1 {
+            font-size: 1.6rem;
+            color: $secondary-black-900;
+            font-weight: 300;
+        }
+
+        &--right {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+
+}

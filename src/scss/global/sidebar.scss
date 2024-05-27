@@ -1,0 +1,31 @@
+@use "@/scss/variables" as *;
+
+.side-bar {
+    position: relative;
+    width: rem(88);
+    height: calc(100vh - rem(88));
+    border-right: 1px solid $border ;
+}
+
+.ss {
+    width: fit-content;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 1px #333;
+    position: relative;
+
+    --width: 0%;
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-text-fill-color: $secondary-black-900;
+        width: var(--width, 0);
+        overflow: hidden;
+        transition: .6s;
+    }
+
+
+
+}

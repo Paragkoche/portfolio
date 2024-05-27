@@ -30,7 +30,9 @@
         z-index: 0;
     }
 
-    font-size: 1.6rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
 
     .btn-child {
         position: relative;
@@ -39,12 +41,12 @@
         align-items: center;
         line-height: 1.3em;
         flex-direction: row;
-        gap: .8rem;
+        gap: .5rem;
 
         .btn-icon {
             transform: rotate(135deg);
-            height: rem(24);
-            width: rem(24);
+            height: 0.8rem;
+            width: 0.8rem;
         }
     }
 }

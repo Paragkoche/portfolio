@@ -18,7 +18,7 @@ import {
 
 const CursorContext = createContext<{
   isHovered: boolean;
-  setHovered: (val: boolean, text: string) => void;
+  setHovered: (val: boolean, text: React.ReactNode) => void;
 }>({
   isHovered: false,
   setHovered() {},
@@ -33,7 +33,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
   useEffect(() => {
     setTouchDevice("ontouchstart" in window);
   }, []);
-  const [text, setText] = useState("");
+  const [text, setText] = useState<React.ReactNode>(<></>);
   const [isHovered, setIsHovered] = useState(false);
   const cursor = useRef(null);
   const cursorSize = isHovered ? 5 * 16 : 16;
