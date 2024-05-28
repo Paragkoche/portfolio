@@ -10,7 +10,7 @@
         display: flex;
 
         // flex-wrap: wrap;
-        @include breakpoint(mobile) {
+        @include breakpoint(tablet) {
             flex-wrap: wrap;
 
             &>:nth-child(2) {
@@ -49,9 +49,10 @@
         }
 
         .social-box {
-            @include breakpoint(mobile) {
+            @include breakpoint(tablet) {
                 height: 10rem;
                 width: 50%;
+                font-size: 1rem;
             }
 
             height: 20rem;
@@ -70,6 +71,11 @@
             svg {
                 width: rem(24);
                 height: rem(24);
+
+                @include breakpoint(mobile) {
+                    width: rem(16);
+                    height: rem(16);
+                }
             }
         }
     }

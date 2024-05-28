@@ -8,6 +8,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     background-color: $body-bg;
     color: $secondary-black-900;
@@ -17,6 +19,7 @@ body {
     scroll-behavior: smooth;
     font-family: $font;
     height: 100vh;
+    height: 100vb;
     width: 100vw;
     overflow-x: hidden;
 
@@ -31,22 +34,27 @@ a {
 .main-body {
     padding-top: rem(88);
     display: flex;
-    overflow: hidden;
     height: 100vh;
 
     .content-body {
-        width: calc(100vw - rem(88));
-        overflow: hidden scroll;
+        width: 100%;
+        // width: 100vw;
         position: relative;
         padding: rem(16) 2rem;
-        height: calc(100vh - rem(88));
+        height: calc(100vh - rem(89));
+        scroll-behavior: smooth;
+        padding-left: calc(rem(80) + 2rem);
 
         @include breakpoint(mobile) {
             padding: rem(16) 1rem;
             height: calc(100vh - rem(55));
-            width: calc(100vh - rem(55));
+            // width: calc(100vh - rem(55));
         }
 
     }
 
+}
+
+::-webkit-scrollbar {
+    width: 0.6rem;
 }

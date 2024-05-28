@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Footer from "../global/footer";
 import Sidebar from "../global/sidebar";
+import Lenis from "lenis";
 
 const HomeLayout = ({
   children,
@@ -11,30 +12,19 @@ const HomeLayout = ({
   const bodyRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
-    const handleScroll = (e: any) => {
-      if (bodyRef.current && textRef.current) {
-        const scrollTop = e.target.scrollTop; // Get the scroll position
-        const maxScroll = e.target.scrollHeight - e.target.clientHeight; // Calculate the maximum scrollable height
-        const opacity = scrollTop / maxScroll; // Calculate opacity based on scroll position
-        let style = textRef.current.style;
-        console.log(textRef);
+  useLayoutEffect(() => {
+    const lenis = new Lenis({
+      smoothWheel: true,
+    });
 
-        style.setProperty("--width", `${opacity * 100}%`);
-        console.log(opacity); // Set the opacity of the target element
-      }
-    };
-
-    if (bodyRef.current) {
-      bodyRef.current.addEventListener("scroll", handleScroll);
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    return () => {
-      if (bodyRef.current) {
-        bodyRef.current.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, [bodyRef, textRef]);
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <main className="main-body">
       <Sidebar ref={textRef} />
