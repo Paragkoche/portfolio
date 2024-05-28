@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
 
+
     @include breakpoint(tablet) {
         flex-direction: column;
         justify-content: inherit;
@@ -14,6 +15,7 @@
     }
 
     &_header {
+        overflow: hidden;
         font-size: 5rem;
         width: 75%;
 
@@ -45,6 +47,8 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        overflow: hidden;
+
 
         @include breakpoint(tablet) {
 
@@ -52,6 +56,7 @@
         }
 
         &_main {
+            overflow: hidden;
             color: $txt-body;
             font-size: 1.4rem;
             line-height: 1.4em;
