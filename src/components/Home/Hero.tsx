@@ -6,8 +6,6 @@ import { useRef } from "react";
 const Hero = () => {
   const body = useRef(null);
 
-  const isInView = useInView(body, { once: true, margin: "-75%" });
-
   const animation = {
     initial: { y: "150%" },
 
@@ -20,7 +18,6 @@ const Hero = () => {
       },
     }),
   };
-  console.log(isInView);
 
   return (
     <section className="hero_section" ref={body}>
