@@ -18,6 +18,34 @@
             height: rem(55);
             width: rem(55);
         }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .toggle-button {
+            width: 24px;
+            height: 24px;
+
+
+        }
+
+        .menu {
+            position: absolute;
+            top: rem(88);
+            left: rem(88);
+            width: calc(99vw - rem(88));
+            height: calc(100vh - rem(88));
+            background-color: $secondary-black-900;
+            border-radius: 20px;
+
+            @include breakpoint(mobile) {
+                left: 0;
+                top: rem(55);
+            }
+
+
+        }
     }
 
     &--nav {

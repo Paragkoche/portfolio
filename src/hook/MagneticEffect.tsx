@@ -15,8 +15,6 @@ export default function GsapMagnetic({ children }: Props) {
     query: "(min-width: 1025px)",
   });
   const handleMouseEnter = (e: any) => {
-    console.log("ok", magnetic.current);
-
     if (magnetic.current) {
       const button = magnetic.current;
       const rect = button.getBoundingClientRect();
