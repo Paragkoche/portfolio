@@ -1,0 +1,59 @@
+@use "@/scss/variables" as *;
+
+.cardContainer {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: rem(80);
+    width: 100%;
+
+    .card {
+        background-color: $body-bg;
+        border: 1px solid $border;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 500px;
+        width: 100%;
+        border-radius: 25px;
+        padding: 50px;
+        transform-origin: top;
+
+        &_header {
+            width: 100%;
+            border-bottom: 1px solid $border ;
+            display: flex;
+            justify-content: space-between;
+            padding: rem(20) 0;
+
+            div {
+                font-size: 5rem;
+            }
+
+            .emt {
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .btn-icon {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+.main {
+
+    // margin-top: 25%;
+
+    // margin-bottom: 50vh;
+
+}

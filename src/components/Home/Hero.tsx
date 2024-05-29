@@ -1,16 +1,17 @@
 "use client";
 import "@/scss/home/hero.scss";
 import Button from "../ui/Button";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 const Hero = () => {
   const body = useRef(null);
 
   const animation = {
-    initial: { y: "150%" },
+    initial: { y: "150%", opacity: 0 },
 
     enter: (i: number) => ({
       y: "0",
+      opacity: 1,
       transition: {
         duration: 0.75,
         ease: [0.33, 1, 0.68, 1],

@@ -5,4 +5,9 @@
     height: 100%;
     background-image: url("/dot.svg");
     background-repeat: repeat;
+
+    @include breakpoint(mobile) {
+        height: 10% !important;
+        margin: 20px 0;
+    }
 }

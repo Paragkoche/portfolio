@@ -4,18 +4,32 @@
     height: 50%;
     width: 100%;
     display: flex;
-    font-size: 60px;
-    line-height: 1;
+    font-size: rem(90);
+
+    @include breakpoint(mobile) {
+        height: 50% !important;
+        font-size: rem(25) !important;
+        gap: 5px 0 !important;
+    }
+
+    @include breakpoint(tablet) {
+        height: 75%;
+        font-size: rem(50);
+        gap: 10px 0;
+    }
+
+    // line-height: 1;
     margin: 20px 0;
     // padding: 40px;
-    max-width: 1280px;
+    // max-width: 1280px;
     color: $secondary-black-900;
     flex-wrap: wrap;
 
     .word {
         position: relative;
         margin-right: 12px;
-        margin-top: 12px;
+        height: fit-content;
+        // margin-top: 12px;
 
         .shadow {
             position: absolute;
