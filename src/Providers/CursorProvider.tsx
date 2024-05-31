@@ -19,9 +19,11 @@ import {
 const CursorContext = createContext<{
   isHovered: boolean;
   setHovered: (val: boolean, text: React.ReactNode) => void;
+  setHidden: (value: boolean) => void;
 }>({
   isHovered: false,
   setHovered() {},
+  setHidden() {},
 });
 
 export const useCursor = () => useContext(CursorContext);
@@ -35,11 +37,13 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
   }, []);
   const [text, setText] = useState<React.ReactNode>(<></>);
   const [isHovered, setIsHovered] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const cursor = useRef(null);
-  const cursorSize = isHovered ? 5 * 16 : 16;
+  const cursorSize = isHidden || isTouchDevice ? 0 : isHovered ? 5 * 16 : 16;
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
+    scale: useMotionValue(0),
   };
 
   const scale = {
@@ -51,6 +55,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
     y: useSpring(mouse.y, smoothOptions),
+    scale: useSpring(mouse.scale, smoothOptions),
   };
   const manageMouseMove = (e: MouseEvent) => {
     setTouchDevice("ontouchstart" in window);
@@ -69,7 +74,7 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
       //   const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
       //   const newScaleX = transform(absDistance, [0, height / 2], [1, 1.3]);
       //   const newScaleY = transform(absDistance, [0, width / 2], [1, 0.8]);
-      scale.scale = 2;
+      mouse.scale.set(2);
 
       //move mouse to center of stickyElement + slightly move it towards the mouse pointer
       mouse.x.set(clientX - cursorSize / 2);
@@ -103,6 +108,9 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
     <CursorContext.Provider
       value={{
         isHovered,
+        setHidden(value) {
+          setIsHidden(value);
+        },
         setHovered(val, text) {
           setText(text);
           setIsHovered(val);
@@ -113,12 +121,12 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = (
       <motion.div
         transformTemplate={template}
         style={{
-          display: isTouchDevice ? "none !important" : "flex",
+          // display: isTouchDevice || isHidden ? "none !important" : "flex",
           left: smoothMouse.x,
           top: smoothMouse.y,
           scaleX: scale.x,
           scaleY: scale.y,
-          scale: scale.scale,
+          scale: smoothMouse.scale,
         }}
         animate={{
           width: cursorSize,

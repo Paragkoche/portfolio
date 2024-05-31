@@ -5,6 +5,7 @@ import Timer from "../ui/Timer";
 import "@/scss/global/header.scss";
 import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useCursor } from "@/Providers/CursorProvider";
 const Path = (props: any) => (
   <motion.path
     fill="transparent"
@@ -16,13 +17,14 @@ const Path = (props: any) => (
 );
 const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const { setHidden } = useCursor();
   const containerRef = useRef(null);
   const isMobile = useMediaQuery({ query: `(max-width: ${430 / 16}em)` });
-  useEffect(() => {
-    const html = document.querySelector("html");
-    if (!html) return;
-    html.style.overflow = isOpen ? "hidden" : "initial";
-  }, [isOpen]);
+  // useEffect(() => {
+  //   const html = document.querySelector("html");
+  //   if (!html) return;
+  //   html.style.overflow = isOpen ? "hidden" : "initial";
+  // }, [isOpen]);
 
   return (
     <header className="header">
@@ -33,6 +35,8 @@ const Header = () => {
         ref={containerRef}
       >
         <div
+          onMouseLeave={() => setHidden(false)}
+          onMouseEnter={() => setHidden(true)}
           className="toggle-button"
           onClick={() => {
             toggleOpen();
