@@ -2,9 +2,14 @@
 import GsapMagnetic from "@/hook/MagneticEffect";
 import "@/scss/ui/button.style.scss";
 import { IoArrowBack } from "react-icons/io5";
-import React from "react";
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import { useCursor } from "@/Providers/CursorProvider";
-const Button = (props: React.HTMLAttributes<HTMLButtonElement>) => {
+const Button = (
+  props: DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+) => {
   const { setHidden } = useCursor();
   return (
     <GsapMagnetic>

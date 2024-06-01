@@ -1,7 +1,10 @@
+"use client";
 import "@/scss/home/Workflow.scss";
 import Button from "../ui/Button";
 import Accordian from "../ui/Accordian";
+import { useRouter } from "next/navigation";
 const Workflow = () => {
+  const router = useRouter();
   return (
     <section className="workflow-section">
       <header className="workflow-header">
@@ -10,7 +13,13 @@ const Workflow = () => {
       </header>
       <div className="workflow-body">
         <div className="button-space">
-          <Button className="workflow-but">Get in touch</Button>
+          <Button
+            type="button"
+            onClick={() => router.push("/contact")}
+            className="workflow-but"
+          >
+            Get in touch
+          </Button>
         </div>
         <div className="faq">
           <Accordian

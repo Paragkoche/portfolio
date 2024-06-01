@@ -25,6 +25,9 @@ const Footer = () => {
             )
           }
           onMouseLeave={() => setHovered(false, "")}
+          onClick={() => {
+            window.open("https://www.facebook.com/webtech.all", "_black");
+          }}
         >
           <FiFacebook />
           <span>Facebook</span>
@@ -43,6 +46,9 @@ const Footer = () => {
             )
           }
           onMouseLeave={() => setHovered(false, "")}
+          onClick={() => {
+            window.open("https://www.instagram.com/paragkoche__", "_black");
+          }}
         >
           <AiOutlineInstagram />
           <span>Instagram</span>
@@ -61,6 +67,9 @@ const Footer = () => {
             )
           }
           onMouseLeave={() => setHovered(false, "")}
+          onClick={() => {
+            window.open("https://www.github.com/paragkoche", "_black");
+          }}
         >
           <FiGithub />
           <span>Github</span>
@@ -80,6 +89,12 @@ const Footer = () => {
             )
           }
           onMouseLeave={() => setHovered(false, "")}
+          onClick={() => {
+            window.open(
+              "https://www.linkedin.com/in/parag-koche-8030841b6",
+              "_black"
+            );
+          }}
         >
           <FiLinkedin />
           <span>Linkedin</span>

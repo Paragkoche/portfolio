@@ -25,7 +25,7 @@ const Card = ({
 }) => {
   return (
     <div className="cardContainer">
-      <div className="card" style={{ top: `calc(-5vh + ${i * 25}px)` }}>
+      <div className="card" style={{ top: `${i * 25}px` }}>
         <header className="card_header">
           <div>{title}</div>
           <Button

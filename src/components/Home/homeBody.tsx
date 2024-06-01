@@ -13,9 +13,7 @@ const HomeLayout = ({
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
-    const lenis = new Lenis({
-      smoothWheel: true,
-    });
+    const lenis = new Lenis();
 
     function raf(time: any) {
       lenis.raf(time);
