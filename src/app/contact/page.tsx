@@ -38,6 +38,7 @@ const page = () => {
                 const j = await d.json();
                 alert(j.message);
               }
+              setLoading(false);
             } catch (e) {
               setLoading(false);
 
