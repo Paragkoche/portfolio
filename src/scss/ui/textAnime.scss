@@ -7,7 +7,7 @@
     font-size: rem(90);
 
     @include breakpoint(mobile) {
-        height: 50% !important;
+        height: 25% !important;
         font-size: rem(15) !important;
         gap: 2px 0 !important;
     }
