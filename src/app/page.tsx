@@ -10,8 +10,8 @@ export default function Home() {
       <DotSpace style={{ height: "25%" }} />
       <TextAnimation paragraph="Partnering with tech innovators to craft software products adored by millions worldwide. Transforming code into magic with a splash of creativity and a lot of coffee!" />
       <DotSpace style={{ height: "25%" }} />
-      {/* <Skill /> */}
-      {/* <DotSpace style={{ height: "25%" }} /> */}
+      <Skill />
+      <DotSpace style={{ height: "25%", margin: "5rem 0" }} />
       <ScrollingCard />
       <DotSpace style={{ height: "25%" }} />
     </>

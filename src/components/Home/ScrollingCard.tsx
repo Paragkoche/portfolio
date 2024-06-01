@@ -1,10 +1,10 @@
 "use client";
 import "@/scss/home/ScrollingCard.scss";
-import { useScroll } from "framer-motion";
-import { useRef } from "react";
-import Image from "@/components/ui/Images";
+// import { useScroll } from "framer-motion";
+// import { useRef } from "react";
+// import Image from "@/components/ui/Images";
 import Button from "../ui/Button";
-import Images from "@/components/ui/Images";
+// import Images from "@/components/ui/Images";
 import { projects } from "@/data/alldata";
 const Card = ({
   title,
@@ -47,14 +47,14 @@ const Card = ({
 };
 
 export default function ScrollingCard() {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
+  // const container = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["start start", "end end"],
+  // });
 
   return (
-    <section ref={container} className="main">
+    <section className="main">
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (
@@ -62,7 +62,7 @@ export default function ScrollingCard() {
             key={`p_${i}`}
             i={i}
             {...project}
-            progress={scrollYProgress}
+            // progress={scrollYProgress}
             range={[i * 0.25, 1]}
             targetScale={targetScale}
           />
