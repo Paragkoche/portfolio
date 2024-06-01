@@ -63,7 +63,9 @@ const skill = () => {
                 }}
               />
             </header>
-            <div className="image-body">{/* <_.image /> */}</div>
+            <div className="image-body">
+              <p className="info">{_.desc}</p>
+            </div>
           </div>
         ))}
       </div>

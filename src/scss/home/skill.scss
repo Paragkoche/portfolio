@@ -10,6 +10,9 @@
 
     .right {
 
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
 
         display: flex;
         align-items: center;
@@ -21,6 +24,10 @@
 
         // height: 100%;
         .image-cont {
+            @include breakpoint(mobile) {
+                top: rem(55) !important;
+            }
+
             display: flex;
             flex-direction: column;
 
@@ -55,6 +62,22 @@
                 align-items: center;
                 justify-content: center;
 
+                .info {
+                    padding: 20px;
+                    width: 100%;
+                    display: none;
+
+                    @include breakpoint(mobile) {
+                        font-size: 1rem;
+                    }
+
+                    @include breakpoint(tablet) {
+                        display: initial;
+                    }
+
+                    // height: 100%;
+                }
+
                 svg {
                     width: 500px;
                     height: 500px;
@@ -67,6 +90,10 @@
     }
 
     .left {
+        @include breakpoint(tablet) {
+            display: none;
+        }
+
         height: 100%;
         width: 50%;
         border-left: 1px solid $border;
@@ -92,11 +119,21 @@
                 letter-spacing: .01em;
                 font-size: 5.2rem;
                 line-height: 1.2em;
+
+                @include breakpoint(laptop) {
+                    font-size: 2.2rem;
+
+                }
             }
 
             .info-dec {
                 font-size: 2.2rem;
                 line-height: 1.3em;
+
+                @include breakpoint(laptop) {
+                    font-size: 1.4rem;
+
+                }
             }
 
             // height: 100vh;

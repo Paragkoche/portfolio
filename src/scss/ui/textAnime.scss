@@ -8,14 +8,20 @@
 
     @include breakpoint(mobile) {
         height: 50% !important;
-        font-size: rem(25) !important;
-        gap: 5px 0 !important;
+        font-size: rem(15) !important;
+        gap: 2px 0 !important;
     }
 
     @include breakpoint(tablet) {
         height: 75%;
         font-size: rem(50);
         gap: 10px 0;
+    }
+
+    @include breakpoint(laptop) {
+        height: 75%;
+        font-size: rem(50);
+        gap: 0 0;
     }
 
     // line-height: 1;
