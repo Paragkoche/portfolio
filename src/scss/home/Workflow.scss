@@ -35,6 +35,11 @@
         background-image: url(/dot-4.svg);
 
         .button-space {
+            @include breakpoint(tablet) {
+                display: none;
+
+            }
+
             width: 50%;
             height: 15vh;
             display: flex;
@@ -58,6 +63,11 @@
             width: 50%;
             padding: 1.4rem;
             height: 100%;
+
+            @include breakpoint(tablet) {
+                width: 100%;
+
+            }
         }
     }
 }
