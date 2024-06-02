@@ -3,8 +3,9 @@ import "@/scss/home/Workflow.scss";
 import Button from "../ui/Button";
 import Accordian from "../ui/Accordian";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/Providers/loading";
 const Workflow = () => {
-  const router = useRouter();
+  const { goto } = useLoading();
   return (
     <section className="workflow-section">
       <header className="workflow-header">
@@ -15,7 +16,7 @@ const Workflow = () => {
         <div className="button-space">
           <Button
             type="button"
-            onClick={() => router.push("/contact")}
+            onClick={() => goto("Home", "Contact", "/contact")}
             className="workflow-but"
           >
             Get in touch

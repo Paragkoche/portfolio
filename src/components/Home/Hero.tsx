@@ -52,7 +52,17 @@ const Hero = () => {
           dynamic, responsive web applications.
         </motion.p>
         <span></span>
-        <Button className="hero_section_info_other">view my work</Button>
+        <Button
+          onClick={() => {
+            window.open(
+              "https://github.com/Paragkoche?tab=repositories",
+              "_black"
+            );
+          }}
+          className="hero_section_info_other"
+        >
+          view my work
+        </Button>
       </div>
     </section>
   );

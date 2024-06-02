@@ -1,22 +1,34 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Button from "../ui/Button";
 import Timer from "../ui/Timer";
 import "@/scss/global/header.scss";
+import { useLoading } from "@/Providers/loading";
 
 const Header = () => {
-  const router = useRouter();
+  const { goto } = useLoading();
+  const path = usePathname();
   return (
     <header className="header">
       <div className="menu-button"></div>
       <nav className="header--nav">
-        <h1 onClick={() => router.push("/")}>Parag Koche</h1>
+        <h1
+          onClick={() =>
+            goto(path.split("/").at(-1) == "" ? "Home" : "Contact", "Home", "/")
+          }
+        >
+          Parag Koche
+        </h1>
         <div className="header--nav--right">
           <Timer />
           <Button
-            onClick={() => {
-              router.push("/contact");
-            }}
+            onClick={() =>
+              goto(
+                path.split("/").at(-1) == "" ? "Home" : "Contact",
+                "Contact",
+                "/contact"
+              )
+            }
           >
             Contact me
           </Button>
