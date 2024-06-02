@@ -3,6 +3,7 @@ import "@/scss/globals.scss";
 import { CursorProvider } from "@/Providers/CursorProvider";
 import Header from "@/components/global/header";
 import HomeLayout from "@/components/Home/homeBody";
+import { LoadingProvider } from "@/Providers/loading";
 export const metadata: Metadata = {
   title: "Parag Koche | Full Stack Web Developer",
   description:
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CursorProvider>
-          <Header />
-          <HomeLayout>{children}</HomeLayout>
-        </CursorProvider>
+        <LoadingProvider>
+          <CursorProvider>
+            <Header />
+            <HomeLayout>{children}</HomeLayout>
+          </CursorProvider>
+        </LoadingProvider>
       </body>
     </html>
   );
