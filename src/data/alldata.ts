@@ -4,7 +4,15 @@ export const projects: any[] = [
     {
         title: "brush.ish",
         description:
-            "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+            `brush.ish is an elegant online platform for a Berlin-based visual artist to showcase and sell original paintings. The website combines clean design with powerful functionality to create a seamless browsing and purchasing experience for art lovers.
+
+As the developer, I was responsible for building the backend logic and making key improvements to the frontend. The project leverages a modern tech stack:
+
+Next.js for fast, SEO-friendly frontend development
+
+Sentry for monitoring and error tracking
+
+Server Functions for secure, efficient backend operations (e.g., handling contact forms, dynamic content, or shop logic)`,
         src: "water.jpg",
         link: "https://brush-ish.vercel.app/",
         color: "#C2491D",
