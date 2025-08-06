@@ -22,7 +22,7 @@ export const projects: any[] = [
     {
         title: "Tripe users",
         description:
-            "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+            "Trip Users is a travel booking platform designed to help users explore, plan, and book their trips with ease. I was responsible for both the frontend and backend logic, developing a fully functional, user-friendly interface along with the underlying server-side infrastructure. From dynamic booking flows and user authentication to responsive layouts and API integration, I built and maintained the core features that power the site’s seamless travel experience.",
         src: "tree.jpg",
         link: "https://tripusers.com/",
         color: "#977F6D",
