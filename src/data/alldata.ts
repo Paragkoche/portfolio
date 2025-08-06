@@ -4,15 +4,7 @@ export const projects: any[] = [
     {
         title: "brush.ish",
         description:
-            `brush.ish is an elegant online platform for a Berlin-based visual artist to showcase and sell original paintings. The website combines clean design with powerful functionality to create a seamless browsing and purchasing experience for art lovers.
-
-As the developer, I was responsible for building the backend logic and making key improvements to the frontend. The project leverages a modern tech stack:
-
-Next.js for fast, SEO-friendly frontend development
-
-Sentry for monitoring and error tracking
-
-Server Functions for secure, efficient backend operations (e.g., handling contact forms, dynamic content, or shop logic)`,
+            `brush.ish is a modern portfolio and e-commerce website built for a Berlin-based visual artist to showcase and sell original paintings. I developed the backend logic and made key frontend improvements to ensure a smooth, responsive user experience. The site is built with Next.js for fast rendering, Sanity as a flexible headless CMS for easy content management, and Server Functions to handle backend operations like data fetching and contact forms. The result is a visually engaging, scalable platform that supports both artistic storytelling and online sales.`,
         src: "water.jpg",
         link: "https://brush-ish.vercel.app/",
         color: "#C2491D",
