@@ -13,9 +13,9 @@ export const projects: any[] = [
     {
         title: "The Kapda project",
         description:
-            "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+            "The Kapda Project is a full-featured e-commerce website focused on fashion and lifestyle products. I was responsible for building the entire backend infrastructure and implementing the complete frontend logic to ensure a seamless shopping experience. The site supports dynamic product listings, user interactions, and smooth navigation across pages. Using modern web technologies, I developed a scalable and maintainable system that powers both the visual aesthetics and core functionality of the platform.",
         src: "rock.jpg",
-        link: "https://www.thekapdaproject.com/",
+        link: "https://thekapdaproject.vercel.app/",
         color: "#BBACAF",
         logo: "https://i.postimg.cc/MpwwNHP0/svgviewer-png-output.png",
     },
